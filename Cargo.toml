@@ -1,0 +1,26 @@
+[package]
+name = "linera-tictactoe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = "0.1.68"
+ed25519-dalek = { version = "2.0.0", features = ["rand_core"] }
+futures = "0.3.28"
+linera-sdk = { path = "/workspaces/linera-reference/linera-sdk" }
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = "1.0.96"
+thiserror = "1.0.40"
+getrandom = { version = "0.2", features = ["js"] }
+rand = { version = "0.8", features = ["getrandom"] }
+anyhow = "1.0.70"
+
+[dev-dependencies]
+tokio = { version = "1.28.2", features = ["rt", "macros"] }
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+test = []

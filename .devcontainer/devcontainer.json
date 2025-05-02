@@ -1,0 +1,24 @@
+{
+    "name": "Linera Game Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "bungcip.better-toml",
+                "vadimcn.vscode-lldb",
+                "tamasfe.even-better-toml",
+                "serayuzgur.crates"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "rust-analyzer.checkOnSave.command": "clippy"
+            }
+        }
+    },
+    "forwardPorts": [8080, 8081],
+    "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+    "remoteUser": "vscode"
+}
